@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rancho&family=Rubik+Moonrocks&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/index.css">
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg bg-transparent">
+            <div class="container">
+                <a class="navbar-brand d-flex align-items-center" href="#">
+                    <span class="rubik-moonrocks-regular display-3 text-success">Eventor</span>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link " aria-current="page" href="index.html">Inicio</a>
+                        </li>
+                        <li class="nav-item ">
+                            <a class="nav-link" href="event.html">Eventos</a>
+                        </li>
+                        <li class="nav-item ">
+                            <a class="nav-link" href="participant.html">Participantes</a>
+                        </li>
+                        <li class="nav-item ">
+                            <a class="nav-link" href="calendar.html">Calendario</a>
+                        </li>
+                        <li class="nav-item ">
+                            <a class="nav-link" href="task.html">Tareas</a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link" href="information.html">Información relevante</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section class="container mt-3">
+            <div class="col-12">
+                <h3>Seleccionar Evento</h3>
+                <select id="selectEvent" class="form-select">
+                    <option selected>Selecciona un evento...</option>
+                    <option value="evento1">Evento 1</option>
+                    <option value="evento2">Evento 2</option>
+                    <option value="evento3">Evento 3</option>
+
+                </select>
+            </div>
+
+            <div id="infoEvento" class="col-12 mt-3">
+                <h3>Información del Evento</h3>
+                <p>Encuentra aquí recursos útiles para el evento:</p>
+                <ul>
+                    <li><a href="#" id="mapaLink" target=" _blank">Mapadel Evento</a></li>
+                    <li><a href="#" id="sitioWebLink" target="_blank">Sitio Web del Evento</a></li>
+                    <li><a href="#" id="documentoLink" target="_blank">Documento Importante</a></li>
+                </ul>
+            </div>
+        </section>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
+        integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <script src="js/index.js"></script>
+</body>
+
+</html>
