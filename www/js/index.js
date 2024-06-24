@@ -1,29 +1,41 @@
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- * http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
-
-// Wait for the deviceready event before using any of Cordova's device APIs.
-// See https://cordova.apache.org/docs/en/latest/cordova/events/events.html#deviceready
 document.addEventListener('deviceready', onDeviceReady, false);
 
 function onDeviceReady() {
-    // Cordova is now initialized. Have fun!
-
     console.log('Running cordova-' + cordova.platformId + '@' + cordova.version);
     document.getElementById('deviceready').classList.add('ready');
+    
+    cordova.plugins.permissions.requestPermission(cordova.plugins.permissions.ACCESS_FINE_LOCATION, function (status) {
+        if (status.hasPermission) {
+            console.log('Permiso de geolocalización concedido');            
+            navigator.geolocation.getCurrentPosition(onSuccess, onError);
+        } else {
+            console.warn('Permiso de geolocalización no concedido');
+            alert('Para funcionar correctamente, esta aplicación necesita acceso a la geolocalización.');
+        }
+    }, function (error) {
+        console.error('Error al solicitar permiso de geolocalización:', error);
+    });
 }
+
+function onSuccess(position) {
+    if (position && position.coords) {
+        var latitude = position.coords.latitude.toFixed(6);
+        var longitude = position.coords.longitude.toFixed(6); 
+        
+       
+        document.getElementById('latitude').textContent = latitude;
+        document.getElementById('longitude').textContent = longitude;
+    } else {
+        console.error('No se pudo obtener la ubicación correctamente.');
+        alert('No se pudo obtener la ubicación correctamente. Verifica la configuración del navegador o permisos de geolocalización.');
+    }
+}
+
+function onError(error) {
+    console.error('Error getting location', error);
+    alert('Error getting location: ' + error.message);
+}
+
+navigator.geolocation.getCurrentPosition(onSuccess, onError);
+
+

@@ -57,41 +57,10 @@
     </header>
     <main>
         <section class="container mt-3">
-            <div class="col-12">
-                <h3>Seleccionar Evento</h3>
-                <select id="selectEvent" class="form-select">
-                    <option selected>Selecciona un evento...</option>
-                    <option value="evento1">Evento 1</option>
-                    <option value="evento2">Evento 2</option>
-                    <option value="evento3">Evento 3</option>
-
-                </select>
+            <div id="app">
+                <h1>Lista de Posts</h1>
+                <ul id="postList"></ul>
             </div>
-            <div id="geoInfo" class="col-12 mt-3">
-                <h3>Información de Geolocalización</h3>
-                <p>Coordenadas:</p>
-                <ul>
-                    <li>Latitud: <span id="latitude"></span></li>
-                    <li>Longitud: <span id="longitude"></span></li>
-                </ul>
-            </div>
-
-            <div id="infoEvento" class="col-12 mt-3">
-                <h3>Información del Evento</h3>
-                <p>Encuentra aquí recursos útiles para el evento:</p>
-                <ul>
-                    <li><a href="#" id="mapaLink" target=" _blank">Mapadel Evento</a></li>
-                    <li><a href="#" id="sitioWebLink" target="_blank">Sitio Web del Evento</a></li>
-                    <li><a href="#" id="documentoLink" target="_blank">Documento Importante</a></li>
-                    <li><a href="usuarios.html" id="usuariosLink" target="_blank">Usuarios></li>
-                </ul>
-                
-
-                
-            </div>
-
-           
-            
         </section>
     </main>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
@@ -103,7 +72,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
-    <script src="js/index.js"></script>
+    <script src="js/usuarios.js"></script>
 
 </body>
 
